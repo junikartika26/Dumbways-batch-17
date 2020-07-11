@@ -1,0 +1,35 @@
+<html>
+<head><title>Hitung Ikan</title></head>
+<body>
+ <p>---- total ikan ----</p>
+   <span id="hasil"></span> 
+<script >
+ const hitung = () => {
+            var hari=471;
+            var waktu;
+            var jml_ikan=1476;
+            var hasil = '';
+            var total= document.getElementById('hasil')
+
+            
+                for (waktu = 1; waktu <=hari; waktu++) {
+                        if(waktu%46==0){
+
+                          jml_ikan = jml_ikan-(jml_ikan*6/100);
+                          jml_ikan+=5;
+                          hasil+= "hari ke "+waktu+" ada "+jml_ikan+" ikan mas<br/>";
+                        }
+                        if(waktu==hari){
+                              hasil+= "hari ke "+waktu+" ada "+jml_ikan+" ikan mas";
+                        }
+              }
+
+             total.innerHTML = hasil;
+            
+        }
+
+        hitung()  
+
+</script>
+</body>
+</html>
