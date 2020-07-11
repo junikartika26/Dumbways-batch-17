@@ -6,6 +6,7 @@
 <script >
  const hitung = () => {
             var hari=471;
+            var mati;
             var waktu;
             var jml_ikan=1476;
             var hasil = '';
@@ -14,10 +15,14 @@
             
                 for (waktu = 1; waktu <=hari; waktu++) {
                         if(waktu%46==0){
+                          mati=Math.floor(jml_ikan*6/100);
+                          jml_ikan-=mati;
 
-                          jml_ikan = jml_ikan-(jml_ikan*6/100);
+                          hasil+= "ada "+mati+" ikan mas mati, sisa ikan mas ada"+jml_ikan+"<br/>";
+
                           jml_ikan+=5;
-                          hasil+= "hari ke "+waktu+" ada "+jml_ikan+" ikan mas<br/>";
+                          hasil+= "hari ke "+waktu+" ada "+jml_ikan+" ikan mas<br/><br/>";
+
                         }
                         if(waktu==hari){
                               hasil+= "hari ke "+waktu+" ada "+jml_ikan+" ikan mas";
