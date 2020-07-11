@@ -1,0 +1,9 @@
+SELECT * FROM video_tb;
+SELECT * FROM category_tb;
+
+SELECT * FROM video_tb WHERE category_id=1;
+
+
+SELECT video_tb.id, video_tb.title, video_tb.attache, video_tb.thumbnail, category_tb.name
+FROM video_tb JOIN category_tb
+ON video_tb.category_id = category_tb.id;
