@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomor 3</title>
+</head>
+<style>
+    #hasil{
+        letter-spacing: 10px;
+    }
+
+    p{
+        font-size: 20px;
+    }
+</style>
+
+<body>
+    <p>---- panjang ----</p>
+   <span id="hasil"></span> 
+
+    <script>
+        const cetak_gambar = (jumlah) => {
+            var baris, kolom;
+            var hasil = '';
+            var pola = document.getElementById('hasil')
+
+            if (jumlah % 2 == 1) {
+                for (baris = 0; baris < jumlah; baris++) {
+                    for (kolom = 0; kolom < jumlah; kolom++) {
+                        if(baris%2==0){
+                            if(kolom%2==1){
+                                hasil+= ' * ';
+                            } else {
+                                hasil+= ' = ';
+                            }
+                        }else{
+                            if(kolom%2 ==1){
+                                hasil+= ' = ';
+                            }else{
+                                hasil+= ' * ';
+                            }
+                        }
+                    }
+                    hasil += '<br/>';
+                }
+            }else {
+                hasil = 'harus ganjil';
+            }
+             pola.innerHTML = hasil;
+            
+        }
+
+        cetak_gambar(5)       
+
+    </script>
+</body>
+
+</html>
